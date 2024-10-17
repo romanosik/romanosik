@@ -1,0 +1,108 @@
+
+Arithmetic Operators
+
+	+ addition
+	- subtraction
+	* multiplication
+	/ division
+	% remainder/modulus -> 10 % 3 -> 1 (3+3+3)
+        odd/even conditions ->
+        int num = 5;
+        num % 2 -> if 0 -> even
+                -> if not 0 -> odd
+        int seconds = 100;
+        seconds / 60 -> minutes (1)
+        seconds % 60 -> remaining seconds (40)
+
+	- When you use arithmetic operators between two different datatypes the result will be the bigger type.
+
+	- When you use datatypes like short or byte and use some arithmetic operators the values are changed to int, so the result of the operation is also int
+
+____________________________________________________________
+
+Unary Operators
+
+        +       (plus) positive number
+        -       (minus) negative number
+        ++      incrementing, adding 1
+                    int n = 1;
+                    n++; -> add 1 n.
+                    print(n) -> 2
+        --      decrementing, subtracting 1
+                    int n = 3;
+                    n--; decrease n by 1
+                    print(n) -> 2
+
+int num = -5;
+____________________________________________________________
+
+Shorthand Operators:
+        shortened versions of the arithmetic operators
+
+        +=
+            int n = 3;
+            n+=1; - add 1 to n
+            n+=3; - add 3 to n
+            println(n) => 7
+        -=
+        *=
+        /=
+        %=
+---------------
+Add 1 to num using different ways:
+int num = 3;
+num++;
+num+=1;
+++num;
+num = num + 1;
+println(num) => 7
+__________________________________________________________________
+
+Relational Operators
+	statements return a boolean value
+
+        > greater than
+        < less than
+        >= greater than or equal to
+        <= less than or equal to
+        == equals
+        != not equals
+
+        Q: What is the difference between = and ==
+                in java we use = as an assignment operator
+                in java we use == to compare two values, are they equal?
+__________________________________________________________________
+
+Logical Operators
+        evaluates two boolean expressions and returns one resulting boolean value
+
+        AND Logic
+                && -> BOTH
+                both expressions need to be true for the result to be true
+
+        OR logic
+                || -> EITHER
+                at least one of expressions to be true for the result to be true
+
+        NOT logic
+                !
+                opposite boolean value
+__________________________________________________________________
+
+Operator precedence
+	Execution is from top to bottom and left to right
+
+        ! - (negative) ++ --
+        * / %
+        + -
+        < > <= >=
+        == !=
+        &&
+        ||
+        = += -= *= /= %=
+
+	Use parenthesis to prioritize the operations
+		(5 + 2) * 3 -> 21
+		5 + 2 * 3 -> 11
+
+__________________________________________________________________

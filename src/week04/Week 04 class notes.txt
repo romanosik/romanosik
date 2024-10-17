@@ -1,0 +1,349 @@
+
+Week 04 review
+
+Conditional statements:
+
+__________________________________________________________________
+
+Operators
+    arithmetic
+    unary
+    shorthand
+    relational
+    logical
+Operator precedence
+
+If statements
+If else statements
+multibranch if
+if statements without brackets
+nested if statements
+switch statement
+ternary operator
+__________________________________________________________________
+
+Arithmetic Operators
+
+    + addition
+    - subtraction
+    * multiplication
+    / division
+    % remainder/modulus -> 10 % 3 -> 1 (3+3+3)
+        odd/even conditions ->
+        int num = 5;
+        num % 2 -> if 0 -> even
+                -> if not 0 -> odd
+
+    - When you use arithmetic operators between two different datatypes the result will be the bigger type.
+
+    - When you use datatypes like short or byte and use some arithmetic operators the values are changed to int, so the result of the operation is also int
+
+____________________________________________________________
+
+Unary Operators
+
+        +       (plus) positive number
+        -       (minus) negative number
+        ++      incrementing, adding 1
+                    int n = 1;
+                    n++; -> add 1 n.
+                    print(n) -> 2
+        --      decrementing, subtracting 1
+                    int n = 3;
+                    n--; decrease n by 1
+                    print(n) -> 2
+
+
+____________________________________________________________
+
+Shorthand Operators:
+        shortened versions of the arithmetic operators
+
+        +=
+            int n = 3;
+            n+=1; - add 1 to n
+            n+=3; - add 3 to n
+        -=
+        *=
+        /=
+        %=
+__________________________________________________________________
+
+Relational Operators
+    statements return a boolean value
+
+        > greater than
+        < less than
+        >= greater than or equal to
+        <= less than or equal to
+        == equals
+        != not equals
+
+        Q: What is the difference between = and ==
+                in java we use = as an assignment operator
+                in java we use == to compare two values, are they equal?
+__________________________________________________________________
+
+Logical Operators
+        evaluates two boolean expressions and returns one resulting boolean value
+
+        AND Logic
+                && -> BOTH
+                both expressions need to be true for the result to be true
+
+        OR logic
+                || -> EITHER
+                at least one of expressions to be true for the result to be true
+
+        NOT logic
+                !
+                opposite boolean value
+__________________________________________________________________
+
+Operator precedence
+    Execution is from top to bottom and left to right
+
+        ! - (negative) ++ --
+        * / %
+        + -
+        < > <= >=
+        == !=
+        &&
+        ||
+        = += -= *= /= %=
+
+    Use parenthesis to prioritize the operations
+        (5 + 2) * 3 -> 21
+
+__________________________________________________________________
+
+If statements
+
+Control flow statements
+
+    code that allows you to control how your program runs
+
+single if statement:
+
+    if (boolean expression) {
+        //code to run if condition is TRUE
+    }
+
+        when the boolean expression is true -> the statements inside of the if block will be executed
+
+        when the boolean expression if false -> nothing will happen, the code will resume
+        execution after the if statement    when we write if statement, else is block is not mandatory.
+
+A
+if(B){
+  C
+}
+D
+--------------
+1) B is true: A, C, D
+2) B is false: A, D
+
+===================================
+
+
+if else statements
+
+    if(boolean expression) {
+        //code to run if condition is TRUE
+    } else {
+        //code to run if condition is FALSE
+    }
+
+        when the boolean expression is true -> the statements inside of the if block will be executed
+
+        when the boolean expression is false -> the statements inside of the else block will be executed
+--------------
+int pay;
+if(condition) {
+    pay = 2000;
+} else {
+    pay = 3000;
+}
+pritnln(pay);
+
+1) condition is true: 2000
+2) condition is false: 3000
+-----------------
+
+A
+if(B){
+  C
+  D
+}else {
+   E
+}
+F
+----------
+1) B is true: A, C, D, F
+2) B is false: A, E, F
+--------------
+
+a and b
+if a is greater b: "a is greater"
+if b is greater than a : "b is greater"
+otherwise : they are equal
+
+
+a = 10, b = 3, c = 1
+    a is largest
+    is a greater than b AND is a greater than c
+    if(a > b && a > c)
+a = 10, b = 30, c = 1
+    if(b > a && b > c)
+    b is largest
+a = 10, b = 30, c = 100
+    c is largest
+
+multi branch
+    whenever there is multiple conditions that are related we can use the multi branch if to handle them
+
+    execution for multi branch: the first condition is checked, if it true the first block is executed, otherwise(false) it will check the next condition.
+
+        if(boolean 1){
+            // statements that get executed when the boolean 1 is TRUE
+        } else if(boolean 2) {
+            // statements that get executed when the boolean 2 is TRUE
+        } else if(boolean 3){
+            // statements that get executed when the boolean 3 is TRUE
+        } else {
+            // statements that get executed when all the other boolean conditions were FALSE
+        }
+
+    Note: you can declare as many else if blocks as needed
+    Note: you can add else at the end, it is optional
+    Note: once a condition is true and its code block is executed the other conditions are NOT checked
+    Note: multi branch statements are used to make the code more efficient and more readable
+
+single if vs if else vs multi branch
+
+    single if: checks one condition and if its true run some code
+
+    if else: checks one condition and if is true runs some code, but also has some code to run if its false
+
+    multi branch: checks multiple conditions and define different blocks of code to run whenever one of the conditions is true
+--------------------------------
+
+FIZZBUZZ
+
+__________________________________________________________________
+
+if without brackets
+
+    if statements can be created without brackets, but this limits the if statement
+
+    If without brackets will execute only the next line after it
+
+    Take away: always use brackets
+
+__________________________________________________________________
+
+Nested If statements
+
+    if statement inside of another if statement
+
+    if( 1 ){
+
+        if( 2 ){
+            A
+        } else {
+            B
+        }
+
+    } else {
+
+        if( 3 ){
+            C
+        } else {
+            D
+        }
+
+    }
+
+     1,     2,      3
+    true, true, boolean -> A
+    true, false, boolean -> B
+    false, boolean, true -> C
+    false, boolean, false -> D
+
+    Treat each statement as a separate statement where each boolean condition is checked one at a time
+_______________________________________________________________switch
+
+Conditional statement: controlling the flow of execution
+
+    switch statements compares only exact values
+        ==
+        relational operations > < are not allow in switch
+
+    switch(input value){
+        case x:
+            // statements
+            break;
+    }
+
+    switch: keyword that is used to create switch statements
+
+    input value: value that is checked in the switch
+        can only be: byte, short, int, String, char, enum
+        what is not allowed: boolean, float, double, long
+
+    case: value that you are looking for
+        Ex: if the input value was num an int variable the case could be:
+            case 5:  <--> if(num == 5)
+            case 6:  <--> if(num == 6)
+
+        case should match the same datatype as the input value
+        cases should be unique
+
+    statements: any code that should run when a case matches
+
+    break: stops and exits the switch statement
+
+    default: the case that gets executed if no other case matches
+
+Flow of execution
+
+    if: check one boolean at a time, if it true run the that block, but if its false check the next condition
+
+    switch: matches the case right away then runs the statements defined from that point until the end of the switch statement
+        Note: we use break to also stop the switch
+
+Benefit: more readable, compact, easy to maintain, in general can be quicker in execution than if statement
+
+else: code block that runs when all other boolean in the if statements was false
+default: the case the runs when no other case matches
+
+__________________________________________________________________
+
+ternary
+
+    different way to write an if statement
+
+    returnValue = boolean_expression ? trueValue : falseValue;
+
+        ? if
+        : else
+__________________________________________________________________
+
+DRY: Don't Repeat Yourself
+
+If statement vs Switch vs Ternary
+
+    in most cases you will use if statements
+    any switch or ternary can always be converted to an if statement
+    If statements allow more flexibility by using single if, if else, multi branch, or nested
+
+    Switch is useful to compare the exact value, so it is a good choice when all the possible values are known (they will be the cases)
+    Downsides: only compare values, no boolean logic, and the datatypes that can be compared are a little restrictive
+
+    Ternary useful sometimes to make a quick single if statement in one line
+    Can only be used when a value is returned, and you need to at least define two possible outputs
+__________________________________________________________________
+
+
+
+

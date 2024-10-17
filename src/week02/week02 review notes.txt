@@ -1,0 +1,287 @@
+Week 02 review:
+
+print statements
+
+	System.out.println();
+	-> lets you output something to console
+
+	Difference between print and println
+		System.out.println() -> output to the console and the break the line
+		System.out.print()	 -> output to the console in the same line. It DOESN't break the line
+
+__________________________________________________________________
+
+Command/Control + / - shortcut to comment
+
+
+
+comments
+
+	Comments are text in a program file that will not be executed. The compiler ignores these lines
+
+	commenting is a good practice to describe how the code works.
+
+	They serve as documentation and help other people understand how the code works
+
+	- Comment types
+
+		Single line comment: in a single line with two forward slashes
+			// this is a single line comment
+
+		Multi line comment: can be used to group many lines as a comment with opening /* and closing */
+
+			/*
+				comment line 1
+				comment line 2
+				comment line 3
+			*/
+
+		Java doc comment: similar to multi line comments, but provides more features for HTML documentation. Starts with /** and closes with */
+
+			/**
+			*	comment line 1
+			*	comment line 2
+			*	comment line 3
+			*/
+
+		TODO:
+			// TODO: study more comment
+
+			The TODO text is detected in a comment and IntelliJ can detect the TODO items.
+
+			Look at the bottom left for the todo tab or
+			view -> tool windows -> todo
+__________________________________________________________________
+
+escape sequence
+
+	Q: How can you output this:
+			I like "java" programming
+
+			System.out.println("I like "java" programming"); <-- ERROR
+
+	We can use the backslash to define a character we want to output
+		-> this is useful when the character we want to output is also part of java syntax
+
+		\
+
+		for example: if we want to output a " quotation mark we can do:
+			\"
+
+			"java" -> \"java\"
+			System.out.println("I like \"java\" programming");
+
+		for example: if we want to output a \ backslash we can do:
+			\\
+
+            The first backslash is for the syntax of escape characters
+            The second backslash is for the backslash character to be output
+
+		some more useful escape characters:
+
+			code 	-> output
+			\" 		-> "
+			\\ 		-> \
+			\'		-> '
+			\n 		-> next line
+			\t 		-> tab
+
+ NewLine
+During the week:
+1) I watch java recodings and code
+2) Follow java labs
+3) Solve practice tasks
+
+__________________________________________________________________
+
+
+Datatypes
+Variables
+String
+char
+Concatenation
+
+
+__________________________________________________________________
+
+variables
+
+	container to hold data/information
+	allows us to use that information multiple times
+		re-usability
+
+	- Declare a variable: makes a container/variable ready to be used
+
+		dataType variableName;
+		int age;
+
+	- Assign a value to a variable: store some value/number into your container
+
+		variableName = value;
+		age = 10;
+
+			 = equals sign is called the assignment operator
+
+	- Declaring and assigning at the same time
+
+		dataType variableName = value;
+		int age = 10;
+
+	- multiple variables declaration in 1 statement:
+
+			int apples, grapes, bananas, mangoes;
+			apples = 10;
+			grapes = 3;
+			bananas = 23;
+			mangoes = 55;
+
+	- Using/Printing variables
+		To use a variable's value we use just the variable name
+
+			ex: int students = 200;
+				System.out.println(students); // this will print 200
+				System.out.println("students"); // this will print student as text
+				System.out.println(STUDENTS); // this will give an error because 										// STUDENTS variable does not exist
+	-  reassigning
+		changing the value something else, old value is lost. Updating the variable
+
+		int students = 200;
+		System.out.println(students); //200
+		int students = 205;//ERROR. students already declared
+
+		students = 205;
+		System.out.println(students); //205
+
+	- Hardcoded: directly in the code, so it is difficult to change
+
+__________________________________________________________________
+
+datatypes
+
+	1) Primitive datatypes: byte, short, int, long, float, double, boolean, char
+
+	2) Object types: (we will spend more time on this later)
+		-> String
+
+	-> all primitives are lowercase
+
+		whole numbers: (ex: 40)
+			byte
+			short
+			int   <- by default
+			long
+		floating numbers: (ex: 24.62)
+			float
+			double  <- by default
+		characters: a single character, uses 'a'
+			char
+		boolean: true or false
+			boolean
+
+	-> compiler uses int and double by default
+
+	How to tell the compiler you want long number: use an 'L' at the end of the number
+	How to tell the compiler you want float number: use an 'F' at the end of the number
+
+    char : holds a single character
+    	-> each character is represented in a single quote 'a'
+
+	------------------------------------------------------------
+
+        char ch = 'B';
+        char lastLetterOfMyName = 'z';
+
+		Q: how does the computer know we want a certain character
+			There is character sets that associate characters to a number
+
+			ASCII (American Standard Code for Information Interchange)
+      			is one character set that is used for english
+      			it is part of the unicode character set which handles many languages and characters
+
+		char datatype can be give a value in two ways
+			1) character inside of a single quotation  ''
+				ex: char grade = 'A';
+			2) use the number that is representing each character
+				ex: char grade = 65;
+
+	------------------------------------------------------------
+
+	String: sequence of characters in double quotations
+		object type
+
+    	Q: What is the difference between 'a' and "a"
+			the types are different. The 'a' is a char type and the "a" is a String type
+			object types take more memory
+
+__________________________________________________________________
+
+naming conventions
+
+	convention: what everyone follows
+
+	Example: today is sunday
+
+	project/folder: today-is-sunday
+
+	package: lowercase, use underscore for multiple words (snake case)
+		-> in recordings camel case
+
+		* In the recordings Muhtar did not use the convention, but we should use it
+
+		ex: today_is_sunday
+
+	classes: first letter is uppercase and the rest lowercase, for each word
+		Pascal Case: Every word starts with an uppercase
+
+		ex: TodayIsSunday
+
+	variables: camel case
+		-> first word is lowercase, then any following words start with an uppercase
+
+		ex: todayIsSunday
+
+variable naming rules
+
+	- make the variable names are clear as possible
+		dont do:
+
+			int x;
+			int a;
+
+	- We cannot use reserved keywords, which are already used by Java as a programming language.
+	public, static, package, void, for, if, etc.
+
+	https://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html
+
+	- Variables can contains these:
+		- any letter (A-Z, or a-z)
+		- any number (0-9)
+				Cannot start with numbers, but it can contain numbers.
+					Ex:
+						1stWord -> INVALID
+						word2 -> VALID
+
+		- only special characters allowed are dollar sign $ and underscore _
+				but it is not encouraged.
+
+				int _$ = 55;
+				_1Number
+__________________________________________________________________
+
+Concatenation
+
+	concatenation operator +
+
+			concatenation: combining text with any data, returns String
+            concatenation turns everything to a String
+
+				concatenations vs addition
+					String + String -> concatenation
+					String + number -> concatenation
+					String + char -> concatenation
+					number + number -> addition
+					char + char -> addition
+__________________________________________________________________
+
+
+__________________________________________________________________

@@ -1,0 +1,72 @@
+methods
+
+	methods are important for programming. They help you create reusable code. Readable , maintainable code.
+
+
+public class Test{
+
+
+	public static void main(String[] args){
+		greet();
+	}
+
+	public static void greet() {
+		System.out.println("Good Morning");
+		System.out.println("How are you today?");
+	}
+}
+
+	public static String hello(int n){
+		return "world";
+	}
+
+	public static void main(String[] args){
+		String str = hello(4);
+		System.out.println(hello(4));
+	}
+
+
+Searching in IntelliJ:
+	Shift+Shift -Global search(files, classes,settings)
+	Command/Ctrl + Shift + F (Seach in your project only)
+
+return type
+
+	void: runs some code and nothing is returned from the method
+	return type: runs some code and returns a single value back
+
+	if a method defines a return type instead of void, then there MUST be a return value.
+		-> The return value is given using the 'return' keyword
+
+	when calling a return method it is up to you how you will use the return value
+
+parameters/arguments
+
+    parameters are information needed for a method to run. That information is used in the method
+        you can define as many parameters as needed
+
+    Q: What is the difference between parameter and argument
+            parameter: the variables declared and used in the method
+
+            argument: the value given when calling a method
+
+method overloading
+
+	method has the same name, but different parameters (parameter datatypes can be changed or the number of parameters)
+
+		-> allow us to have different methods that share a similar idea and work with different inputs
+			+ readability
+			+ re-usability
+
+    return type DOES NOT overload your method
+        you need to overload the method by changing the parameters
+            -> BUT IF the method is overloaded THEN you can change the return type
+                -> Return type can be the same or different if overloaded
+
+	IQ: Can you overload a main method?
+		Yes, we can add a new method with name main, and have different parameters, but it will not act as the normal main method
+
+________________________________________________________________
+
+VSC > Enable git integration
+

@@ -1,0 +1,170 @@
+Array:
+
+In programming languages we have data structures that allow us to handle data easily and efficiently
+
+    Array is a data structure that holds primitive & object types
+    Arrays are objects
+
+phone, keys, wallet -> into single pocket
+phone -> pocket1
+keys -> pocket2
+wallet -> pocket3
+
+int num = 10;
+             0    1   2   3   4   5   6
+int[] num = {10, 55, 334, 24, 66, 44, 65};
+              0123
+String str = "java";
+
+How to create an array
+
+    1) datatype [] arrayName = { };
+
+        String[] cities = { "San Fransisco", "Moscow", "Madison", "Tokyo", "Baghdad" };
+
+        String city1 = "San Fransisco";
+        String city2 = "Moscow";
+        String city3 = "Madison";
+        String city4 = "Tokyo";
+        String city5 = "Baghdad";
+
+
+        int [] nums = { 3, 1, 5, 4};
+
+
+    2) datatype [] arrayName = new datatype[size]
+
+        String [] names = new String[2];    [ null, null ]
+        int [] numbers = new int[3];    [ 0 , 0 , 0 ]
+        numbers[0] = 432;
+        numbers[1] = 525;
+        numbers[2] = 5;
+
+        When you make an array this way the elements have default values
+            int -> 0
+            double -> 0.0
+            object -> null
+            boolean -> false
+            char -> '\u0000' (null character, Unicode 0)
+
+    boolean[] quizResult = new boolean[10]; //false
+
+    3) Declare and assign
+
+        double [] prices = new double[]{10.5, 50.6, 30.9};
+
+
+    Stack       Heap
+
+    String s  -> "abc"
+         hdh313hd
+
+How to read each element of the array
+
+    each element in the array has an index starting from 0
+
+    String [] cities = { "San Fransisco", "Moscow", "Madison", "Tokyo", "Baghdad" };
+                                0            1          2         3         4
+    arrayName[index]
+        cities[0] -> "San Fransisco"
+        cities[4] -> "Baghdad"
+        cities[5] -> ArraysIndexOutOfBoundsException
+
+How to change/assign an element to the array
+
+    arrayName[index] = value
+__________________________________________________________________
+
+for each loop
+
+    used to iterate through a collection/data structure
+
+    for(datatype variableName : data structure){
+
+    }
+
+    The for each loop iterates from the beginning of the array to the end, one element at a time
+
+    Advantages:
+        - clean and readable code
+        - no need to keep track of iterations
+        - iterates over every element
+
+    Disadvantages:
+        - only goes forwards
+        - no control of element via index
+        - does not allow changes in size of collection (relevant later)
+
+__________________________________________________________________
+
+Arrays class
+    located in java.util
+
+https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Arrays.html
+
+    This is a class that has useful method for array objects
+
+    some of the methods:
+        Arrays.toString()
+        Arrays.equals()
+        Arrays.sort()
+        Arrays.copyOf()
+__________________________________________________________________
+
+String methods: methods in the String class
+
+	toCharArray(): converts the String to a char array
+		returns char[]
+		Ex:
+			String s = "java";
+			s.toCharArray() --> ['j', 'a', 'v', 'a']
+
+	split(): break the String into parts, where each part is a different element in a String array
+		returns String[]
+
+		common use case: separate words in a sentence
+
+			String str = "today is friday";
+			str.split(" ") --> ["today", "is", "friday"]
+__________________________________________________________________
+
+multidimensional array
+
+    An array that holds other arrays.
+    The element of a 2D is a 1D array
+
+        single array
+           int [] a = {1, 2, 3};
+
+        2D array
+           int [][] arr = {
+                    {1, 2, 3},
+                    {4, 5, 6}
+                }
+
+            arr[1] -> {4, 5, 6}
+            arr[1] = { 10, 30 10};
+
+            To access the elements we will still use indexes. In this case the elements are other arrays
+
+    Print the multidimensional arrays:
+        Arrays.deepToString(arr);
+
+declaring 2D array
+
+    dataType [][] arrayName = new dataType[x][z];
+
+        where x is how many elements the 2D array has - number of arrays
+
+        where z is the size of each inner array
+            -> is optional to define. If it is not defined then the inner array sizes' do not matter. they can be different
+
+    dataType [][] arrayName = {arrayName1, arrayName2, etc}
+
+    dataType [][] arrayName = {
+        {element, element, element, etc},
+        {element, element, element, etc},
+        {element, element, element, etc}
+    };
+
+__________________________________________________________________

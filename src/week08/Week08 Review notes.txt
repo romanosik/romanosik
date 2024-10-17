@@ -1,0 +1,235 @@
+
+String
+
+	String is a class that represents sequence of characters
+
+	String is defined in the java.lang package
+
+	2 ways to create String object
+
+		* literal: creating with double quotations
+			""
+				stored in the String pool
+
+		* new: new String("");
+
+		String name = "Anna";
+		String name = new String("Mike");
+
+	Strings are immutable
+		the object cannot be changed after creation
+
+	Strings have indexes:
+		position of each character in the String
+		index numbers start from 0
+				  0123
+	String str = "java";
+				  'j''a''v''a'
+
+documentation: define how to use the class, methods
+
+	https://docs.oracle.com/en%2Fjava%2Fjavase%2F11%2Fdocs%2Fapi%2F%2F/java.base/java/lang/String.html
+
+StringBuilder: mutable String
+StringBuffer: legacy version of mutable String. synchronized
+
+IQ:
+	What is String pool.
+	String pool is an area in Heap java memory where String objects are stored.
+	Purpose is to reuse existing string objects and save memory.
+
+	Java memory: Stack --> Heap
+	Stack -> variable and references
+	Heap -> All objects
+
+	How to create a String?
+
+	1) with double quotes
+	2) with new String()
+
+	1) with double quotes -> it adds String object into String pool
+		String today = "Saturday";
+		"Saturday" is stored in String pool, and can be reused
+
+		String str = "Saturday";
+		"Saturday" is reused, str and today variables are both pointing to same object in String pool.
+
+	2) with new String()
+		String today = new String("Saturday");
+		now "Saturday" is NOT in String pool, it is in Heap area, but outside String pool
+
+		String str = new String("Saturday");
+		Another new "Saturday" object is created and NOT reused from previous.
+
+IQ:	Difference between == and equals():
+	== -> checks if both variables point to same object in memory(same location in memory)
+
+	equals() -> it compares values. checks if both Strings contain same characters.
+
+	String str1 = "java";
+	String str2 = "java";
+
+	str1 == str2 -> true.
+	str1.equals(str2) -> true
+	------------------------
+	String str1 = new String("java");
+	String str2 = new String("java");
+	String str3 = "java";
+
+	str1 == str2 -> false
+	str1 == str3 -> false
+
+	str1.equals(str2) => true
+	str1.equals(str3) => true
+
+String methods:
+
+	How methods are used:
+		stringObject.method()
+
+		equals(): checks if the Strings have the same characters
+			returns boolean
+
+		equalsIgnoreCase(): checks if the Strings have the same characters, but ignores case sensitivity
+			returns boolean
+			String str1 = "java";
+			String str2 = "Java";
+
+			str1.equals(str2) => false. case sensitive
+			str1.equalsIgnoreCase(str2) => true. case insensitive comparison
+
+		charAt(int): gives the character at the given index number
+			returns char
+
+				charAt(int index) -> index parameter
+				charAt(0) -> 0 is argument
+
+			String str = "java";
+			str.charAt(0) => 'j'
+			str.charAt(1) => 'a'
+			str.charAt(10) => StringIndexOutOfBoundsException error
+
+			"hello".charAt(0) => 'h'
+
+			char ch = 'a';
+			String s1 = ch; //error
+			//convert char to String, ""+char
+			String s1 = ""+ch;
+			String s2 = ""+102;
+
+		toUpperCase(): converts your characters to uppercase
+			returns String
+
+		toLowerCase(): converts your characters to lowercase
+			returns String
+
+		length(): gives the number of characters are in the String
+			returns int
+
+		substring(): takes a part of the String. Return partial string
+			returns String
+
+			substring(int): the given is the starting index for what you want to keep
+				String str = "java code";
+				str.substring(2) -> "va code"
+				str.substring(0) -> "java code"
+
+			substring(int, int): the first index is the starting char until the second index, which is not included
+				String str = "javacode";
+				str.substring(2,4) -> "va"
+				str.substring(0,4) -> "java"
+				str.substring(4,8) -> "code"
+				str.substring(4) -> "code"
+
+
+		trim(): removes spaces from the beginning and end of the String
+			returns String
+			String str = " ja va ";
+			str.trim() => "ja va";
+			str.replace(" ","") => "java";
+
+		isEmpty(): checks if the String has no characters
+			returns boolean
+
+		startsWith(): checks if the String starts with certain characters
+			returns boolean
+
+			String str = "string practice";
+			str.startsWith("s") => true
+			str.startsWith("stri") => true
+			str.startsWith("string ") => true
+			str.startsWith("string practice") => true
+			str.startsWith("practice") => false
+
+		endsWith(): checks if the String end with certain characters
+			returns boolean
+
+			String str = "string practice";
+			str.endsWith("e") => true
+			str.endsWith("ice") => true
+			str.endsWith("practice") => true
+			str.endsWith("tic") => false
+
+		indexOf(): finds the index of the given char or String
+			returns int. return index position
+
+				indexOf(char)
+				indexOf(String)
+				indexOf(char, int)
+				indexOf(String, int)
+
+				String str = "java";
+				str.charAt(0) => 'j'
+
+				str.indexOf('j') => 0
+
+				str.indexOf("v") => 2
+
+				str.indexOf("a") => 1
+				str.indexOf("ja") => 0
+				str.indexOf("av") => 1
+				str.indexOf("p") => -1
+				When character is not found, it returns -1
+
+				String str2 = "javascript, c++";
+				str2.indexOf("script") => 4
+				---------------------------
+				str2.indexOf("c") => 5
+				We can also provide starting point/index to search
+				str2.indexOf("c", 6) => 12
+
+		lastIndexOf(String): gives the index of the last occurrence of the given String
+			returns int
+			String str = "javascript, c++, ruby";
+			str.lastIndexOf(",") => 15
+			str.lastIndexOf("a") => 3
+
+		contains(String): checks if a partial string is present anywhere in the string
+			returns boolean
+
+			String str = "javascript, c++, ruby";
+			str.contains("a") => true
+			str.contains("ava") => true
+			str.contains("c++") => true
+			str.contains(" ,") => false
+
+			str.contains("a") === str.indexOf("a") >= 0
+
+		replace(): replaces the given char/Strings
+			returns String
+
+				replace(String, String)
+				replace(char, char)
+
+		String str = "java-ruby-python";
+		str.replace("-", ",") => "java,ruby,python"
+
+		replaceFirst(String, String): replaces the first instance of the given String
+			returns String
+
+		String str = "java-ruby-python";
+		str.replaceFirst("-", ",") => "java,ruby-python"
+
+
+__________________________________________________________________
+
