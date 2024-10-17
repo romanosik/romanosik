@@ -4,6 +4,7 @@ package week07;
 import java.util.Scanner;
 
 /*
+Ude do while loop and scanner  object
 Keep asking to enter 5
 Thank you for 5 dollars
  */
@@ -13,6 +14,7 @@ public class GiveMe5Dollars1 {
         int dollars;
 
         do {
+
             System.out.println("Give me 5$");
             dollars = input.nextInt();
         } while (dollars != 5);
